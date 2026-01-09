@@ -1,0 +1,4 @@
+baseURL = 'https://hugo.hegemanngarcia.com/'
+languageCode = 'en-us'
+title = 'hegemanngarcia'
+theme = 'ananke'
