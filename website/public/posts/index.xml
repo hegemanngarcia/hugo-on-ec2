@@ -6,14 +6,14 @@
     <description>Recent content in Posts on hegemanngarcia</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jan 2026 11:58:36 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Fri, 09 Jan 2026 11:58:36 +0100</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text, and this is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; website!&lt;/p&gt;</description>
+      <title>Countdown bis 23.12.2026</title>
+      <link>http://localhost:1313/posts/countdown-post/</link>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/countdown-post/</guid>
+      <description>&lt;p&gt;Nur noch ein paar Tage bis zum großen Tag:&lt;/p&gt;&#xA;&#xA;&lt;div id=&#34;cd-1794431864638805000&#34; class=&#34;countdown&#34; data-target=&#34;2026-12-23T00:00:00&amp;#43;01:00&#34;&gt;&#xA;  &lt;span class=&#34;cd-d&#34;&gt;--&lt;/span&gt; Tage&#xA;  &lt;span class=&#34;cd-h&#34;&gt;--&lt;/span&gt; Std&#xA;  &lt;span class=&#34;cd-m&#34;&gt;--&lt;/span&gt; Min&#xA;  &lt;span class=&#34;cd-s&#34;&gt;--&lt;/span&gt; Sek&#xA;&lt;/div&gt;&#xA;&#xA;&lt;script&gt;&#xA;(function () {&#xA;  var el = document.getElementById(&#34;cd-1794431864638805000&#34;);&#xA;  var target = new Date(el.dataset.target).getTime();&#xA;&#xA;  function pad(n) { return String(n).padStart(2, &#34;0&#34;); }&#xA;&#xA;  function tick() {&#xA;    var diff = target - Date.now();&#xA;    if (diff &lt;= 0) {&#xA;      el.textContent = &#34;Es ist soweit! 🎉&#34;;&#xA;      clearInterval(timer);&#xA;      return;&#xA;    }&#xA;    var s = Math.floor(diff / 1000);&#xA;    el.querySelector(&#34;.cd-d&#34;).textContent = Math.floor(s / 86400);&#xA;    el.querySelector(&#34;.cd-h&#34;).textContent = pad(Math.floor(s % 86400 / 3600));&#xA;    el.querySelector(&#34;.cd-m&#34;).textContent = pad(Math.floor(s % 3600 / 60));&#xA;    el.querySelector(&#34;.cd-s&#34;).textContent = pad(s % 60);&#xA;  }&#xA;&#xA;  tick();&#xA;  var timer = setInterval(tick, 1000);&#xA;})();&#xA;&lt;/script&gt;&#xA;&#xA;&lt;style&gt;&#xA;.countdown { font-size: 1.6rem; font-weight: 600; text-align: center; margin: 2rem 0; }&#xA;.countdown span { font-size: 2.4rem; margin-left: .6rem; }&#xA;&lt;/style&gt;&#xA;&lt;p&gt;Wir freuen uns so!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

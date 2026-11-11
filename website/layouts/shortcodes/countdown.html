@@ -1,0 +1,63 @@
+{{ $id := printf "cd-%d" now.UnixNano }}
+<div class="cd-wrap" id="{{ $id }}" data-target="{{ .Get "date" }}" data-done="{{ .Get "done" | default "Es ist soweit! 🎉" }}">
+  {{ with .Get "title" }}<div class="cd-title">{{ . }}</div>{{ end }}
+  <div class="cd-grid">
+    <div class="cd-box"><span class="cd-num" data-u="d">--</span><span class="cd-label">Tage</span></div>
+    <div class="cd-box"><span class="cd-num" data-u="h">--</span><span class="cd-label">Stunden</span></div>
+    <div class="cd-box"><span class="cd-num" data-u="m">--</span><span class="cd-label">Minuten</span></div>
+    <div class="cd-box"><span class="cd-num" data-u="s">--</span><span class="cd-label">Sekunden</span></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var el = document.getElementById("{{ $id }}");
+  var target = new Date(el.dataset.target).getTime();
+  var nums = {};
+  el.querySelectorAll(".cd-num").forEach(function (n) { nums[n.dataset.u] = n; });
+  var pad = function (n) { return String(n).padStart(2, "0"); };
+
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      el.innerHTML = '<div class="cd-done">' + el.dataset.done + '</div>';
+      clearInterval(timer);
+      return;
+    }
+    var s = Math.floor(diff / 1000);
+    nums.d.textContent = Math.floor(s / 86400);
+    nums.h.textContent = pad(Math.floor(s % 86400 / 3600));
+    nums.m.textContent = pad(Math.floor(s % 3600 / 60));
+    nums.s.textContent = pad(s % 60);
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+})();
+</script>
+
+<style>
+.cd-wrap {
+  margin: 2.5rem 0;
+  padding: 1.8rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,120,120,.18), rgba(120,160,255,.18));
+  border: 1px solid rgba(128,128,128,.25);
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+.cd-title { font-size: 1.1rem; letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin-bottom: 1.2rem; }
+.cd-grid { display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap; }
+.cd-box {
+  min-width: 5.2rem; padding: .9rem .5rem;
+  border-radius: 14px;
+  background: rgba(128,128,128,.14);
+  backdrop-filter: blur(4px);
+  display: flex; flex-direction: column; align-items: center;
+}
+.cd-num { font-size: 2.6rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.cd-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; opacity: .7; margin-top: .3rem; }
+.cd-box:last-child .cd-num { animation: cd-pulse 1s ease-in-out infinite; }
+.cd-done { font-size: 2rem; font-weight: 700; animation: cd-pulse 1.2s ease-in-out infinite; }
+@keyframes cd-pulse { 50% { transform: scale(1.12); } }
+@media (max-width: 480px) { .cd-box { min-width: 4.2rem; } .cd-num { font-size: 2rem; } }
+</style>

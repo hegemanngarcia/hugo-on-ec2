@@ -49,8 +49,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="hegemanngarcia">
-  <meta itemprop="datePublished" content="2026-01-09T11:58:36+01:00">
-  <meta itemprop="dateModified" content="2026-01-09T11:58:36+01:00">
+  <meta itemprop="datePublished" content="2026-11-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-11-11T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="hegemanngarcia">
 
@@ -115,16 +115,79 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/my-first-post/" class="color-inherit dim link">
-            My First Post
+          <a href="/posts/countdown-post/" class="color-inherit dim link">
+            Noch ein paarmal schlafen… ✨
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <h2 id="introduction">Introduction</h2>
-<p>This is <strong>bold</strong> text, and this is <em>emphasized</em> text.</p>
-<p>Visit the <a href="https://gohugo.io">Hugo</a> website!</p>
+          <p>Es ist so weit: Der große Tag rückt näher, und wir können es kaum noch erwarten. 🎄</p>
+
+<div class="cd-wrap" id="cd-1794432094635744000" data-target="2026-12-23T00:00:00&#43;01:00" data-done="Heute ist es soweit! 🎉🥳">
+  <div class="cd-title">Bis zum 23. Dezember</div>
+  <div class="cd-grid">
+    <div class="cd-box"><span class="cd-num" data-u="d">--</span><span class="cd-label">Tage</span></div>
+    <div class="cd-box"><span class="cd-num" data-u="h">--</span><span class="cd-label">Stunden</span></div>
+    <div class="cd-box"><span class="cd-num" data-u="m">--</span><span class="cd-label">Minuten</span></div>
+    <div class="cd-box"><span class="cd-num" data-u="s">--</span><span class="cd-label">Sekunden</span></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var el = document.getElementById("cd-1794432094635744000");
+  var target = new Date(el.dataset.target).getTime();
+  var nums = {};
+  el.querySelectorAll(".cd-num").forEach(function (n) { nums[n.dataset.u] = n; });
+  var pad = function (n) { return String(n).padStart(2, "0"); };
+
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      el.innerHTML = '<div class="cd-done">' + el.dataset.done + '</div>';
+      clearInterval(timer);
+      return;
+    }
+    var s = Math.floor(diff / 1000);
+    nums.d.textContent = Math.floor(s / 86400);
+    nums.h.textContent = pad(Math.floor(s % 86400 / 3600));
+    nums.m.textContent = pad(Math.floor(s % 3600 / 60));
+    nums.s.textContent = pad(s % 60);
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+})();
+</script>
+
+<style>
+.cd-wrap {
+  margin: 2.5rem 0;
+  padding: 1.8rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,120,120,.18), rgba(120,160,255,.18));
+  border: 1px solid rgba(128,128,128,.25);
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+.cd-title { font-size: 1.1rem; letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin-bottom: 1.2rem; }
+.cd-grid { display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap; }
+.cd-box {
+  min-width: 5.2rem; padding: .9rem .5rem;
+  border-radius: 14px;
+  background: rgba(128,128,128,.14);
+  backdrop-filter: blur(4px);
+  display: flex; flex-direction: column; align-items: center;
+}
+.cd-num { font-size: 2.6rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.cd-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; opacity: .7; margin-top: .3rem; }
+.cd-box:last-child .cd-num { animation: cd-pulse 1s ease-in-out infinite; }
+.cd-done { font-size: 2rem; font-weight: 700; animation: cd-pulse 1.2s ease-in-out infinite; }
+@keyframes cd-pulse { 50% { transform: scale(1.12); } }
+@media (max-width: 480px) { .cd-box { min-width: 4.2rem; } .cd-num { font-size: 2rem; } }
+</style>
+<h2 id="was-bis-dahin-noch-ansteht">Was bis dahin noch ansteht</h2>
+<p>Die To-do-Liste ist lang, aber wir schaffen das. 💪</p>
         </div>
-        <a href="/posts/my-first-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        <a href="/posts/countdown-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
     </div>
   </div>
